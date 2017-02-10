@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jero.motelmall.mapper.user.UserInfoMapper">
+	<resultMap type="com.jero.motelmall.po.user.UserInfo" id="baseResult">
+		<id column="USER_ID" property="userId" jdbcType="VARCHAR" />
+		<result column="USER_NAME" property="userName" jdbcType="VARCHAR" />
+		<result column="USER_AGE" property="userAge" jdbcType="INTEGER" />
+		<result column="USER_CELL" property="userCell" jdbcType="VARCHAR" />
+		<result column="USER_GENDER" property="userGender" jdbcType="INTEGER" />
+	</resultMap>
+	<insert id="addUser" parameterType="com.jero.motelmall.po.user.UserInfo">
+		INSERT INTO userinfo
+		(userinfo.USER_ID,userinfo.USER_NAME,userinfo.USER_AGE,userinfo.USER_CELL,userinfo.USER_GENDER,userinfo.LOG_ID)
+		VALUES
+		(#{userId},#{userName},#{userAge},#{userCell},#{userGender},#{logId});
+	</insert>
+	<delete id="deleteById" parameterType="string">
+		delete from userinfo where
+		userinfo.USER_ID=#{userId};
+	</delete>
+	<update id="update" parameterType="com.jero.motelmall.po.user.UserInfo">
+		update userinfo set
+		USER_NAME#{userName},USER_AGE#{userAge},USER_CELL=#{userCell},
+		USER_GENGER=#{userGender},LOG_ID=#{logId};
+	</update>
+	<select id="select" resultMap="baseResult">
+		SELECT
+		userinfo.USER_ID,
+		userinfo.USER_NAME,
+		userinfo.USER_AGE,
+		userinfo.USER_GENDER,
+		userinfo.USER_CELL,
+		userinfo.LOG_ID
+		FROM
+		userinfo
+
+	</select>
+
+</mapper>

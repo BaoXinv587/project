@@ -1,0 +1,34 @@
+  <?xml version="1.0" encoding="UTF-8" ?> 
+  <!DOCTYPE mapper (View Source for full doctype...)>
+-
+<mapper namespace="com.jero.motelmall.mapper.user.LogInfoMapper">
+	-
+	<resultMap type="com.jero.motelmall.mapper.user.LogInfoMapper"
+		id="baseResult">
+		<id column="LOG_ID" property="logId" jdbcType="VARCHAR" />
+		<result column="LOG_NAME" property="logName" jdbcType="VARCHAR" />
+		<result column="LOG_ADDRESS" property="logAddress" jdbcType="VARCHAR" />
+		<result column="LOG_SEX" property="logSex" jdbcType="VARCHAR" />
+		<result column="LOG_PHONE" property="logPhone" jdbcType="INTEGER" />
+		<result column="LOG_PASS" property="logPass" jdbcType="VARCHAR" />
+	</resultMap>
+	<insert id="addInfo" parameterType="com.jero.motelmall.mapper.user.LogInfoMapper">INSERT INTO loginfo
+		(loginfo.LOG_ID,loginfo.LOG_NAME,loginfo.LOG_ADDRESS,loginfo.LOG_SEX,loginfo.LOG_PHONE,loginfo.LOG_PASS)
+		VALUES
+		(#{logId},#{logName},#{logAddress},#{logSex},#{logPhone},#{logPass})</insert>
+	<delete id="deleteInfoById" parameterType="string">DELETE FROM loginfo
+		WHERE loginfo.LOG_ID=#{logId};</delete>
+	<update id="updateInfoByName" parameterType="com.jero.motelmall.mapper.user.LogInfoMapper">UPDATE loginfo SET
+		loginfo.LOG_NAME=#{logName} WHERE loginfo.LOG_ID = #{logId};</update>
+	<select id="selectAll" resultMap="baseResult">
+		SELECT
+		loginfo.LOG_ID,
+		loginfo.LOG_NAME,
+		loginfo.LOG_ADDRESS,
+		loginfo.LOG_SEX,
+		loginfo.LOG_PHONE,
+		loginfo.LOG_PASS
+		FROM
+		loginfo
+		</select>
+</mapper>
