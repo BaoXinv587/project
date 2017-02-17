@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="JS/jquery-1.8.3.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>表格隔行变色</title>
+    <script type="text/javascript">
+        $(function () {
+            $("tr:gt(0):even").css("background", "pink").next("tr").css("background", "gray");
+            //$("tr:gt(0):even").css("background", "pink");
+            //$("tr:gt(0):odd").css("background", "gray");
+
+            //光棒效果
+            var color;
+            $("tr:gt(0)").hover(function () {
+                color = $(this).css("background");
+                $(this).css("background", "green");
+            }, function () {
+                $(this).css("background", color);
+            });
+
+            //$("td:contains('4'),p:contains('3')").css("background", "red");
+            //$(":empty").css({"width":200,"height":200}).css("background", "red");
+            // $("div:has('a')").css("background", "red");
+            //$("div:parent").css("background", "red");
+            //alert($("div:hidden,p:hidden,input:hidden").length);
+            //$("div:visible").css("background", "red");
+            //$("div[class]").css("background", "red");
+            //$("div[class='one']").css("background", "red");
+            //$("div[class!='one']").css("background", "red");
+            //$("div[class^='o']").css("background", "red");
+            //$("div[class$='e']").css("background", "blue");
+            //$("div[class*='n']").css("background", "pink");
+            // $("div[class][id]").css("background", "yellow");
+            //$("ul li:nth-child(3n-1)").css("background", "pink");
+            //$("div:first").css("background", "pink");
+            //$("ul li:first-child").css("background", "pink");
+            //$("ul li:last-child").css("background", "pink");
+            // $(":only-child").css("background", "pink");
+        });
+
+    </script>
+    
+</head>
+<body>
+    <center>
+        <table border="1">
+            <tr><td>内容的标题</td></tr>
+            <tr><td>111111</td></tr>
+            <tr><td>111111</td></tr>
+            <tr><td>111111</td></tr>
+            <tr><td>111111</td></tr>
+            <tr><td>111111</td></tr>
+            <tr><td>111111</td></tr>
+            <tr><td>444444</td></tr>
+            <tr><td>111111</td></tr>
+        </table>
+        
+    </center>
+</body>
+</html>

@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>欢迎来到用户注册页面</title>
+    <script type="text/javascript">
+        function checkName(){
+            function checkName()
+            {
+                var uName = document.getElementById("txtName");//获取用户昵称文本框对象
+                if (uName.value.trim().length == 0)//除去空格长度等于0
+                { 
+                    alert("用户昵称不能为空");
+                    uName.focus();//当前文本框获得焦点
+                    return false;
+                }
+                if (uName.value.trim().length < 4 || uName.value.trim().length > 16)
+                {
+                    alert("昵称为4-16个字符");
+                    return false;
+                }
+                return true;
+            }
+    </script>
+</head>
+<body>
+    <form action="denglu.html" onsubmit="checkName()">
+        <div>
+            用户名：<input id="textName" type="text" /><br/>
+            密　码：<input id="passWord" type="password" /><br />
+            确认密码：<input id="passWord1" type="password" /><br />
+            电子邮件：<input id="textEmail" type="text" /><br />
+            <input type="submit" value="注册" />
+            <input type="submit" value="重置" />
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>滚屏效果</title>
+    <script type="text/javascript">
+        var step = 1;
+        //产生多行文本
+        for (var i = 1; i <= 10000;i++)
+        {
+            document.write(i+"<br/>");
+        }
+        
+        function autoScroll()
+        {
+            step++;
+            window.scrollTo(0, step);
+            setTimeout("autoScroll()",10);
+        }
+    </script>
+</head>
+<body ondblclick="autoScroll()">
+
+</body>
+</html>

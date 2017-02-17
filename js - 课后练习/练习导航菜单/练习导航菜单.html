@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>练习</title>
+    <style type="text/css">
+        
+        div.menu {
+            margin: 100px auto;
+            width: 300px;
+            
+            
+        }
+        .menu ul {
+            width: 200px;
+            height: 220px;
+            list-style: none;
+            font-size:30px;
+            
+        }
+            .menu ul a {
+                display: block;
+                background-color: #98ca06;
+                color: #002000;
+                text-decoration: none;
+                padding: 10px;
+                text-align: right;
+                font-weight: bold;
+                border-bottom: 1pt solid #006A00;
+                border-left: 12px solid #fd9a01;
+            }
+
+                .menu ul a:hover {
+                    color:white;
+                } 
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var aTag = document.getElementsByTagName("a");//得到所有超链接a标记
+            for (var i = 0; i < aTag.length; i++) {
+                //aTag[i].onmouseover = function () {
+                //    this.style.borderLeft = "12px solid #fe9901";
+                //    this.style.color = "#fff";
+                    
+                //}
+                //aTag[i].onmouseout = function () {
+                //    this.style.borderLeft = "";
+                //    this.style.backgroundColor = "";
+                //    this.style.color = "";
+                //}
+                aTag[i].onclick = function () {
+                    this.style.color = "gray";
+                }
+                
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="#">翻译服务</a></li>
+            <li><a href="#">网站建设</a></li>
+            <li><a href="#">服务流程</a></li>
+            <li><a href="#">付　　费</a></li>
+            
+        </ul>
+    </div>
+</body>
+</html>

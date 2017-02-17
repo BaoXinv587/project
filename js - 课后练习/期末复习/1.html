@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>注册表单验证</title>
+    <script type="text/javascript">
+        function checkName() {
+            var Name = document.getElementById("name").value.trim();
+            var dv1=document.getElementById("dv1");
+            var patt=/^\w{4-16}$/;
+        }
+    </script>
+</head>
+<body>
+    <form action="denglu.html" onclick="return checkAll()">
+        <div>
+            <input type="text" id="name" /><div id="dv1"></div>
+            <input type="password" id="pass" /><div id="dv2"></div>
+            <input type="password" id="pass1" /><div id="dv3"></div>
+            <input type="text" id="email" /><div id="dv4"></div>
+            <input type="submit" id="sub" value="注册" />
+            <input type="reset" id="re" value="重置" />
+        </div>
+    </form>
+</body>
+</html>

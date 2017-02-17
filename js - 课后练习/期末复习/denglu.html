@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script>
+        $(function () {
+            $("td:gt(0):even").css("background", "#F4A460")
+			.next("td").css("background", "#EE82EE");
+            $("td:gt(0)").hover(function () {
+                color = $(this).css("background");
+                $(this).css("background", "#9ACD32")
+            },
+				function () {
+				    $(this).css("background", color);
+				});
+        });
+    </script>
+</head>
+<body>
+    <table align="center">
+        <tr><th>名字</th><th>性别</th><th>年龄</th></tr>
+        <tr><td>李四</td><td>男</td><td>20</td></tr>
+        <tr><td>万给</td><td>女</td><td>60</td></tr>
+        <tr><td>小明</td><td>女</td><td>50</td></tr>
+        <tr><td>林三</td><td>男</td><td>30</td></tr>
+    </table>
+</body>
+</html>

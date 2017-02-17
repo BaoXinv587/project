@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <title></title>    
+    <script type="text/javascript">
+        $(function () {
+            $("tr:gt(0):even").css("background", "red").next("tr").css("background", "yellow");
+            var color;
+            $("tr:gt(0)").hover(function () {
+                color = $(this).css("background");
+                $(this).css("background","gray");
+            }, function () {
+                $(this).css("background",color);
+            });
+        });
+    </script>
+</head>
+<body>
+    <center>
+        <table border="1">
+            <tr><td>这是一个表格</td></tr>
+            <tr><td>111111</td></tr>
+            <tr><td>222222</td></tr>
+            <tr><td>333333</td></tr>
+            <tr><td>444444</td></tr>
+            <tr><td>555555</td></tr>            
+        </table>
+    </center>
+</body>
+</html>

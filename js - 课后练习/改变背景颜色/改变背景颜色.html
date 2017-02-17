@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        .red {
+            background-color:red;
+        }
+        .yellow {
+            background-color: yellow;
+        }
+        .orange {
+            background-color: orange;
+        }
+        .blue {
+            background-color: blue;
+        }
+        .green {
+            background-color: green;
+        }
+    </style>
+    <script type="text/javascript">
+        function changeColor(color)
+        {
+            document.bgColor = color;
+        }
+    </script>
+</head>
+<body>
+    <select onchange="changeColor(this.value)">
+        <option class="red" value="red">红</option>
+        <option class="yellow" value="yellow">黄</option>
+        <option class="orange" value="orange">橙</option>
+        <option class="blue" value="blue">蓝</option>
+        <option class="green" value="green">绿</option>
+    </select>
+</body>
+</html>

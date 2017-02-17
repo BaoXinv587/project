@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>发扑克牌</title>
+    <style type="text/css">
+        
+        #showImg {
+            margin-top: 0px;
+            height: 150px;
+            width: 525px;
+            border:5px dashed #ff3333;
+        }
+        #showImg1 {
+            height: 150px;
+            width: 525px;
+            border: 5px dashed #ff3333;
+        }
+        #anniu {
+            margin-top:20px;
+            
+        }
+
+    </style>
+    <script type="text/javascript">
+        var pai = 5;
+        var i = 1;
+        function wanjia() {
+            var showImg = document.getElementById("showImg");
+            var showImg1 = document.getElementById("showImg1");
+            if (i > 0 && i <= pai * 2) {
+                if (i % 2 > 0) {
+                    var img = document.createElement("img");//创建img对象
+                    img.src = "Images/" + arr1[i] + ".jpg";
+                    showImg.appendChild(img);
+                }
+                else if (i % 2 == 0) {
+                    var img = document.createElement("img");//创建img对象
+                    img.src = "Images/" + arr1[i] + ".jpg";
+                    showImg1.appendChild(img);
+                }
+                
+            }
+                if (i <= pai * 2) {
+                    i++;
+                } else {
+                    alert("请重新发牌！");
+                }
+            }
+        
+            arr1 = new Array(54);
+            function shuijishu(number) {
+                var b = true;
+                for (var i in arr1) {
+                    if (arr1[i] == number) {
+                        b = false;
+                        break;
+                    }
+                }
+                return b;
+            }
+
+            function suiji() {
+                var i = 0;
+                while (i != 54) {
+                    var number = Math.random() * 54;
+                    var temp = Math.floor(number) + 1;
+                    if (shuijishu(temp)) {
+                        arr1[i] = temp;
+                        i++;
+                    }
+                }
+            }
+            
+            function wanjia2() {
+                choseRe();
+            }
+            function choseRe() {
+                document.getElementById("showImg").innerHTML = "";
+                document.getElementById("showImg1").innerHTML = "";
+            }
+    </script>
+</head>
+<body onload="suiji()">
+    <center>
+       <h1 style="color:red;">发扑克牌游戏</h1>
+        <hr />
+        <hr />
+        <h2>玩家1</h2>
+        <div id="showImg">
+            
+        </div>
+        <h2>玩家2</h2>
+        <div id="showImg1">
+
+        </div>
+
+        <div id="anniu">
+            <input type="button" class="btn btn-info" value="发牌" onclick="wanjia()" />
+            <input type="button" value="重新发牌" onclick="wanjia2()" />
+        </div>
+    </center>
+</body>
+</html>

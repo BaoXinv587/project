@@ -1,0 +1,80 @@
+﻿
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>欢迎注册</title>
+    <script type="text/javascript">
+        function checkName() {
+            var uName = document.getElementById("textName").value.trim();
+            var dv1 = document.getElementById("dv1");
+            var patt = /^\w{4,6}$/;
+            dv1.innerHTML = "";
+            if (patt.test(uName)) {
+                return true;
+            } else {
+                dv1.innerHTML = "用户必须在4-6位之间";
+                return false;
+            }
+        }
+        function checkPass() {
+            var uPass = document.getElementById("Pass").value.trim();
+            var patt = /^\w{6,16}$/;
+            var dv2 = document.getElementById("dv2");
+            dv2.innerHTML = "";
+            if (patt.test(uPass)) {
+                return true;
+            } else {
+                dv2.innerHTML = "密码必须在6-16位之间";
+                return false;
+            }
+        }
+        function checkPass1() {
+            var uPass = document.getElementById("Pass").value.trim();
+            var Pass1 = document.getElementById("Pass1").value.trim();
+            var dv3 = document.getElementById("dv3");
+            dv3.innerHTML = "";
+            if (uPass == Pass1) {
+                return true;
+            } else {
+                dv3.innerHTML="两次密码不一致！";
+                return false;
+            }
+        }
+
+        function checkEmail() {
+            var Email = document.getElementById("Email").value.trim();
+            var dv4 = document.getElementById("dv4");
+            dv4.innerHTML = "";
+            var patt = /^\w+@\w+\.\w+[(com)|(cn)|(org)|(net)]$/;
+            if (patt.test(Email)) {
+                return true;
+            } else {
+                dv4.innerHTML = "邮箱格式不正确";
+                return false;
+            }
+        }
+        function checkAll() {
+            if (!checkName() || !checkPass() || !checkPass1() || !checkEmail()) {
+                return false;
+            } else {
+                return true;
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <form action="denglu.html" onclick="return checkAll()">
+        <center>
+            <div>
+                用  户  名：<input type="text" id="textName" /><br /><div id="dv1"></div>
+                密　　码：<input type="password" id="Pass" /><br /><div id="dv2"></div>
+                确认密码：<input type="password" id="Pass1" /><br /><div id="dv3"></div>
+                电子邮件：<input type="text" id="Email" /><br /><div id="dv4"></div>
+                <input type="submit" id="sub1" value="注册" /><input type="reset" id="cZ" value="重置" />
+            </div>
+        </center>
+    </form>
+</body>
+</html>
